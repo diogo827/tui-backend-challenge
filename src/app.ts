@@ -2,13 +2,13 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import Controller from "./interfaces/controller.interface";
-import errorMiddleware from "./middleware/error.middleware";
+import IController from "./interfaces/generics/controller";
+import errorMiddleware from "./middleware/error";
 
 class App {
   public app: express.Application;
 
-  constructor(controllers: Controller[]) {
+  constructor(controllers: IController[]) {
     this.app = express();
     this.connectToDB();
     this.initMiddlewares();
@@ -32,7 +32,7 @@ class App {
     this.app.use(errorMiddleware);
   }
 
-  private initControllers(controllers: Controller[]) {
+  private initControllers(controllers: IController[]) {
     controllers.forEach((controller) => this.app.use("/", controller.router));
   }
 

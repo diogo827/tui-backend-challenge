@@ -9,11 +9,15 @@
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {
-            "*": [
-                "node_modules/*"
-            ]
-        }
-    },
+            "Controllers/*": ["src/controllers/*"],
+            "Exceptions/*": ["src/exceptions/*"],
+            "Interfaces/*": ["src/interfaces/*"],
+            "Middleware/*": ["src/middleware/*"],
+            "Models/*": ["src/models/*"],
+            "Services/*": ["src/services/*"],
+            "Utils/*": ["src/utils/*"],
+    }
+},
     "include": [
         "src/**/*"
     ]
