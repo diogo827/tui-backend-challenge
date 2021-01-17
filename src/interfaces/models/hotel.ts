@@ -1,5 +1,5 @@
 import IMedia from "Interfaces/models/media";
-import ITranslation from "Interfaces/models/translation";
+import ITranslatableContent from "Interfaces/models/translatable-content";
 import IAddress from "Interfaces/models/address";
 import IContact from "Interfaces/models/contact";
 import Amenities from "Utils/enums/amenities";
@@ -12,12 +12,11 @@ interface IHotel {
   dupeId?: string;
   name: string;
   rating: string;
-  description?: [ITranslation];
+  description?: [ITranslatableContent];
   amenities?: Amenities[];
   media?: [IMedia];
   cityCode?: string;
-  latitude?: number;
-  longitude?: number;
+  coordinates?: { latitude: number; longitude: number };
   address?: IAddress;
   contact?: IContact;
 }
