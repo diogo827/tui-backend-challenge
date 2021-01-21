@@ -1,9 +1,11 @@
+import IHotel from "./hotel";
 import IRoomDetails from "./room-details";
 import ITranslatableContent from "./translatable-content";
 
 interface IOffer {
   _id: string;
   hotelId: string;
+  hotel: IHotel;
   checkInDate?: number;
   checkOutDate?: number;
   roomQuantity?: number;

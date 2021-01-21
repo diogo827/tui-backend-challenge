@@ -23,25 +23,19 @@ const priceSchema = new mongoose.Schema({
   base: String,
 });
 
-const offerSchema = new mongoose.Schema(
-  {
-    _id: String,
-    hotel: { type: mongoose.Schema.Types.ObjectId, ref: "Hotel" },
-    checkInDate: Number,
-    checkOutDate: Number,
-    roomQuantity: Number,
-    rateCode: String,
-    rateFamilyEstimated: rateFamilyEstimatedSchema,
-    category: String,
-    description: [translatableContentSchema],
-    room: roomSchema,
-    guests: guestsSchema,
-    price: priceSchema,
-  },
-  {
-    _id: false,
-  }
-);
+const offerSchema = new mongoose.Schema({
+  hotel: { type: mongoose.Schema.Types.ObjectId, ref: "Hotel" },
+  checkInDate: Number,
+  checkOutDate: Number,
+  roomQuantity: Number,
+  rateCode: String,
+  rateFamilyEstimated: rateFamilyEstimatedSchema,
+  category: String,
+  description: [translatableContentSchema],
+  room: roomSchema,
+  guests: guestsSchema,
+  price: priceSchema,
+});
 
 const offerModel = mongoose.model<IOffer & mongoose.Document>(
   "Offer",

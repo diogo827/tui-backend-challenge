@@ -1,5 +1,5 @@
 const addressSchema = {
-  lines: String,
+  lines: [String],
   postalCode: String,
   cityName: String,
   countryCode: String,

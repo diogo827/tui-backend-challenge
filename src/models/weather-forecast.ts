@@ -9,8 +9,10 @@ const temperatureSchema = new mongoose.Schema({
 const weatherForecastSchema = new mongoose.Schema({
   date: Number,
   location: {
-    type: { type: String },
-    coordinates: [],
+    type: { type: String, enum: ["Point"] },
+    coordinates: {
+      type: [Number],
+    },
   },
   locationName: String,
   temperature: temperatureSchema,

@@ -14,12 +14,14 @@ const hotelSchema = new mongoose.Schema(
     name: String,
     rating: String,
     description: [translatableContentSchema],
-    amenities: String,
+    amenities: [String],
     media: [mediaSchema],
     cityCode: String,
     location: {
-      type: { type: String },
-      coordinates: [],
+      type: { type: String, enum: ["Point"] },
+      coordinates: {
+        type: [Number],
+      },
     },
     address: addressSchema,
     contact: contactSchema,

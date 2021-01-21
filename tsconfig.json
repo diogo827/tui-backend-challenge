@@ -7,15 +7,15 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
-        "baseUrl": ".",
+        "baseUrl": "src",
         "paths": {
-            "Controllers/*": ["src/controllers/*"],
-            "Exceptions/*": ["src/exceptions/*"],
-            "Interfaces/*": ["src/interfaces/*"],
-            "Middleware/*": ["src/middleware/*"],
-            "Models/*": ["src/models/*"],
-            "Services/*": ["src/services/*"],
-            "Utils/*": ["src/utils/*"],
+            "Controllers": ["controllers/*"],
+            "Exceptions": ["exceptions/*"],
+            "Interfaces": ["interfaces/*"],
+            "Middleware": ["middleware/*"],
+            "Models": ["models/*"],
+            "Services": ["services/*"],
+            "Utils": ["utils/*"],
     }
 },
     "include": [
